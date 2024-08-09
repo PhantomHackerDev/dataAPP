@@ -1,23 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
-import Stepper from "../common/stepper";
-import { MyNumber, Verification } from "./register";
 
 const Login: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState(1);
-
-  const steps = [
-    "My Number Is",
-    "Verification Code",
-    "What’s Your Name?",
-    "Email Address",
-    "How old are you?",
-    "What’s Your Gender?",
-    "I am Looking for...",
-    "Select up to 3 interest",
-    "Upload your photo",
-  ];
   return (
     <>
       <div className="flex">
@@ -123,25 +108,6 @@ const Login: React.FC = () => {
           </div>
         </div>
       </div>
-      {/* <div className="p-4">
-        <Stepper steps={steps} currentStep={currentStep} />
-        <div className="flex justify-between mt-4">
-          <button
-            onClick={() => setCurrentStep(currentStep - 1)}
-            className="px-4 py-2 bg-gray-300 rounded disabled:opacity-50"
-            disabled={currentStep === 0}
-          >
-            Previous
-          </button>
-          <button
-            onClick={() => setCurrentStep(currentStep + 1)}
-            className="px-4 py-2 bg-blue-600 text-white rounded disabled:opacity-50"
-            disabled={currentStep === steps.length - 1}
-          >
-            Next
-          </button>
-        </div>
-      </div> */}
     </>
   );
 };

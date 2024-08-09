@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
-import Stepper from "../common/stepper";
-import RadioButton from "../common/RadioButton";
+import ImageUpload from "../common/ImageUpload";
 
 const Register: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -21,6 +20,11 @@ const Register: React.FC = () => {
   const nextStep = () => {
     if (currentStep < steps.length) {
       setCurrentStep(currentStep + 1);
+    }
+    console.log(currentStep);
+    
+    if (currentStep === 8) {
+      window.location.href = '/location';
     }
   };
 
@@ -500,17 +504,30 @@ const MultiSelect: React.FC = () => {
   )
 }
 
-const UploadImag: React.FC  =() => {
+const UploadImag: React.FC = () => {
+  const smallImage = [];
+  for (let i = 0; i < 5; i++) {
+    smallImage.push(
+      <div key={i} className="flex"><ImageUpload size="24"/></div>
+    )
+    
+  }
   return (
     <div className="flex">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
-            {"Upload your photo"}
+            {"Upload Your Photo"}
           </p>
           <p className="text-[#333333] mx-3 px-10 text-center text-sm">
           We'd love to see you. Upload a photo for your dating journey.
           </p>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          <div className="col-span-2 row-span-2">
+            <ImageUpload size="48" />
+          </div>
+          {smallImage}
         </div>
       </div>
     </div>
@@ -526,4 +543,6 @@ export {
   HowOld,
   Gender,
   LookingFor,
+  MultiSelect,
+  UploadImag,
 };
