@@ -15,8 +15,8 @@ const Register: React.FC = () => {
     "How old are you?",
     "What’s Your Gender?",
     "I am Looking for...",
-    // "Select up to 3 interest",
-    // "Upload your photo",
+    "Select up to 3 interest",
+    "Upload your photo",
   ];
   const nextStep = () => {
     if (currentStep < steps.length) {
@@ -47,6 +47,8 @@ const Register: React.FC = () => {
         return <LookingFor />;
       case 8:
         return <MultiSelect />;
+      case 9:
+        return <UploadImag />;
       default:
         return null;
     }
@@ -470,28 +472,28 @@ const MultiSelect: React.FC = () => {
           </p>
         </div>
         <div className="flex">
-        <ul className="flex w-full flex-col gap-3">
-      {options.map((option) => (
-        <li key={option.value}>
-          <div
-            className={`flex w-[325px] h-[56px] px-4 items-center justify-between rounded-full cursor-pointer ${
-              selectedValues.includes(option.value)
-                ? 'bg-blue-500 text-white'
-                : 'bg-white text-gray-900'
-            }`}
-            onClick={() => handleSelect(option.value)}
-          >
-            <span className="text-lg font-medium">{option.label}</span>
-            <input
-              type="checkbox"
-              checked={selectedValues.includes(option.value)}
-              onChange={() => handleSelect(option.value)}
-              className="w-5 h-5 text-[#FF5069] bg-gray-100 border-gray-300 focus:ring-[#FF5069]"
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
+          <ul className="flex w-full flex-col gap-3">
+            {options.map((option) => (
+              <li key={option.value}>
+                <div
+                  className={`flex w-[325px] h-[56px] px-4 items-center justify-between rounded-full cursor-pointer ${
+                    selectedValues.includes(option.value)
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-white text-gray-900'
+                  }`}
+                  onClick={() => handleSelect(option.value)}
+                >
+                  <span className="text-lg font-medium">{option.label}</span>
+                  <input
+                    type="checkbox"
+                    checked={selectedValues.includes(option.value)}
+                    onChange={() => handleSelect(option.value)}
+                    className="w-5 h-5 text-[#FF5069] bg-gray-100 border-gray-300 focus:ring-[#FF5069]"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
@@ -500,7 +502,18 @@ const MultiSelect: React.FC = () => {
 
 const UploadImag: React.FC  =() => {
   return (
-    <div className=""></div>
+    <div className="flex">
+      <div className="flex flex-col justify-between mt-14 items-center gap-5">
+        <div className="flex flex-col gap-3">
+          <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
+            {"Upload your photo"}
+          </p>
+          <p className="text-[#333333] mx-3 px-10 text-center text-sm">
+          We'd love to see you. Upload a photo for your dating journey.
+          </p>
+        </div>
+      </div>
+    </div>
   )
 }
 

@@ -116,14 +116,14 @@ const Login: React.FC = () => {
           <div className="flex flex-col items-center gap-3">
             <p>
               {"Don’t have an account?"}{" "}
-              <Link className="text-[#FF5069]" to="/login">
+              <Link className="text-[#FF5069]" to="/register">
                 Sign Up
               </Link>
             </p>
           </div>
         </div>
       </div>
-      <div className="p-4">
+      {/* <div className="p-4">
         <Stepper steps={steps} currentStep={currentStep} />
         <div className="flex justify-between mt-4">
           <button
@@ -141,7 +141,7 @@ const Login: React.FC = () => {
             Next
           </button>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
