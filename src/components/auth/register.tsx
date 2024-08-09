@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
-import Stepper from "../common/stepper";
-import RadioButton from "../common/RadioButton";
+import ImageUpload from "../common/ImageUpload";
 
 const Register: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -15,12 +14,17 @@ const Register: React.FC = () => {
     "How old are you?",
     "What’s Your Gender?",
     "I am Looking for...",
-    // "Select up to 3 interest",
-    // "Upload your photo",
+    "Select up to 3 interest",
+    "Upload your photo",
   ];
   const nextStep = () => {
     if (currentStep < steps.length) {
       setCurrentStep(currentStep + 1);
+    }
+    console.log(currentStep);
+    
+    if (currentStep === 8) {
+      window.location.href = '/location';
     }
   };
 
@@ -47,6 +51,8 @@ const Register: React.FC = () => {
         return <LookingFor />;
       case 8:
         return <MultiSelect />;
+      case 9:
+        return <UploadImag />;
       default:
         return null;
     }
@@ -470,37 +476,61 @@ const MultiSelect: React.FC = () => {
           </p>
         </div>
         <div className="flex">
-        <ul className="flex w-full flex-col gap-3">
-      {options.map((option) => (
-        <li key={option.value}>
-          <div
-            className={`flex w-[325px] h-[56px] px-4 items-center justify-between rounded-full cursor-pointer ${
-              selectedValues.includes(option.value)
-                ? 'bg-blue-500 text-white'
-                : 'bg-white text-gray-900'
-            }`}
-            onClick={() => handleSelect(option.value)}
-          >
-            <span className="text-lg font-medium">{option.label}</span>
-            <input
-              type="checkbox"
-              checked={selectedValues.includes(option.value)}
-              onChange={() => handleSelect(option.value)}
-              className="w-5 h-5 text-[#FF5069] bg-gray-100 border-gray-300 focus:ring-[#FF5069]"
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
+          <ul className="flex w-full flex-col gap-3">
+            {options.map((option) => (
+              <li key={option.value}>
+                <div
+                  className={`flex w-[325px] h-[56px] px-4 items-center justify-between rounded-full cursor-pointer ${
+                    selectedValues.includes(option.value)
+                      ? 'bg-blue-500 text-white'
+                      : 'bg-white text-gray-900'
+                  }`}
+                  onClick={() => handleSelect(option.value)}
+                >
+                  <span className="text-lg font-medium">{option.label}</span>
+                  <input
+                    type="checkbox"
+                    checked={selectedValues.includes(option.value)}
+                    onChange={() => handleSelect(option.value)}
+                    className="w-5 h-5 text-[#FF5069] bg-gray-100 border-gray-300 focus:ring-[#FF5069]"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
   )
 }
 
-const UploadImag: React.FC  =() => {
+const UploadImag: React.FC = () => {
+  const smallImage = [];
+  for (let i = 0; i < 5; i++) {
+    smallImage.push(
+      <div key={i} className="flex"><ImageUpload size="24"/></div>
+    )
+    
+  }
   return (
-    <div className=""></div>
+    <div className="flex">
+      <div className="flex flex-col justify-between mt-14 items-center gap-5">
+        <div className="flex flex-col gap-3">
+          <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
+            {"Upload Your Photo"}
+          </p>
+          <p className="text-[#333333] mx-3 px-10 text-center text-sm">
+          We'd love to see you. Upload a photo for your dating journey.
+          </p>
+        </div>
+        <div className="grid grid-cols-3 gap-2">
+          <div className="col-span-2 row-span-2">
+            <ImageUpload size="48" />
+          </div>
+          {smallImage}
+        </div>
+      </div>
+    </div>
   )
 }
 
@@ -513,4 +543,6 @@ export {
   HowOld,
   Gender,
   LookingFor,
+  MultiSelect,
+  UploadImag,
 };

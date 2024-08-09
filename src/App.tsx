@@ -5,6 +5,7 @@ import Header from "./components/layout/header";
 import Main from "./components/Main";
 import Login from "./components/auth/login";
 import Register from "./components/auth/register";
+import Locatied from "./components/Location";
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/main" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/location" element={<Locatied />} />
         </Routes>
       </div>
     </Router>
