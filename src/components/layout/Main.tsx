@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 const Main: React.FC = () => {
   return (
     <div className="flex flex-col justify-between mt-14 items-center">
-      <img className="w-[115px] h-[43px]" src="/image/logo/logo.png" />
+      <img className="w-[115px] h-[43px]" alt="image_logo" src="/image/logo/logo.png" />
       <div className="flex flex-col">
-        <img className="w-[90%] h-auto" src="/image/main/MaskGroup.png" />
+        <img className="w-[90%] h-auto" alt="image_main" src="/image/main/MaskGroup.png" />
       </div>
       <div className="flex flex-col items-center gap-3">
         <p className="text-black font-semibold px-5 text-center text-2xl">Discover Love where your story begins.</p>
@@ -20,7 +20,7 @@ const Main: React.FC = () => {
           </Link>
         </button>
         <p>
-          {'Don’t have an account?'} <Link className="text-[#FF5069]" to="/register">Sign Up</Link>
+          {'Don’t have an account?'} <Link className="text-[#FF5069] font-semibold" to="/register">Sign Up</Link>
         </p>
       </div>
     </div>
