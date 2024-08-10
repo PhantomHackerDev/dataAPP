@@ -20,10 +20,7 @@ const Register: React.FC = () => {
   const nextStep = () => {
     if (currentStep < steps.length) {
       setCurrentStep(currentStep + 1);
-    }
-    console.log(currentStep);
-    
-    if (currentStep === 8) {
+    } else {
       window.location.href = '/location';
     }
   };
@@ -60,7 +57,7 @@ const Register: React.FC = () => {
   return (
     <div className="max-w-md mx-auto mt-10 p-4">
       <div className="mt-4">{renderStepContent()}</div>
-      <div className=" mt-4 items-center justify-center">
+      <div className="flex mt-4 items-center justify-center">
         {/* <button
           onClick={prevStep}
           disabled={currentStep === 1}
@@ -71,7 +68,7 @@ const Register: React.FC = () => {
         <button
           onClick={nextStep}
           disabled={currentStep === steps.length}
-          className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center items-center"
+          className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center justify-center items-center"
         >
           {currentStep === 2 ? "Verify" : "Continue"}
         </button>
@@ -216,8 +213,8 @@ const Verification: React.FC = () => {
 
 const YourName: React.FC = () => {
   return (
-    <div className="flex">
-      <div className="flex flex-col justify-between mt-14 items-center">
+    <div className="flex justify-center ">
+      <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
             {"What is your Name?"}
@@ -247,7 +244,7 @@ const YourName: React.FC = () => {
 
 const EmailAddress: React.FC = () => {
   return (
-    <div className="flex">
+    <div className="flex  justify-center">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -278,7 +275,7 @@ const EmailAddress: React.FC = () => {
 
 const HowOld: React.FC = () => {
   return (
-    <div className="flex">
+    <div className="flex  justify-center">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -309,14 +306,14 @@ const HowOld: React.FC = () => {
 
 const Gender: React.FC = () => {
   return (
-    <div className="flex">
+    <div className="flex justify-center">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
             {"What's Your Gender?"}
           </p>
           <p className="text-[#333333] mx-3 px-10 text-center text-sm">
-            Tell us about your gender
+            Tell us about your gender 
           </p>
         </div>
         <div className="flex flex-col">

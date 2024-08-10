@@ -14,11 +14,11 @@ const Login: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col">
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col justify-center items-center gap-5">
               <PhoneInput />
               <button
                 type="button"
-                className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center items-center"
+                className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center justify-center items-center"
               >
                 Continue
               </button>
@@ -32,7 +32,7 @@ const Login: React.FC = () => {
             <div className="flex flex-col justify-between gap-5">
               <button
                 type="button"
-                className=" relative text-white w-[325px] h-[56px] bg-[#FFFFFF] rounded-full font-medium px-16 py-2 text-center inline-flex items-center me-2 mb-2"
+                className=" relative text-white w-[325px] h-[56px] bg-[#FFFFFF] rounded-full font-medium px-16 py-2 text-center justify-center inline-flex items-center me-2 mb-2"
               >
                 <svg
                   className="absolute left-3"
@@ -59,7 +59,7 @@ const Login: React.FC = () => {
               </button>
               <button
                 type="button"
-                className=" relative text-white w-[325px] h-[56px] bg-[#FFFFFF] rounded-full font-medium px-16 py-2 text-center inline-flex items-center me-2 mb-2"
+                className=" relative text-white w-[325px] h-[56px] bg-[#FFFFFF] rounded-full font-medium px-16 py-2 text-center justify-center inline-flex items-center me-2 mb-2"
               >
                 <svg
                   className="absolute left-3"
@@ -91,15 +91,15 @@ const Login: React.FC = () => {
                 </svg>
                 <Link
                   to="/login"
-                  className="items-center text-center text-black"
+                  className="items-center text-center justify-center text-black"
                 >
                   Login with Google
                 </Link>
               </button>
             </div>
           </div>
-          <div className="flex flex-col items-center gap-3">
-            <p>
+          <div className="flex flex-col justify-center items-center gap-3">
+            <p className="">
               {"Don’t have an account?"}{" "}
               <Link className="text-[#FF5069]" to="/register">
                 Sign Up

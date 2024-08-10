@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Locatied: React.FC = () => {
   return (
       <div className="flex">
@@ -14,11 +14,12 @@ const Locatied: React.FC = () => {
             </p>
           </div>
           <div className="flex flex-col items-center gap-5">
-            <button
+            <Link
+              to='/dashboard'
               className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center items-center"
             >
               Allow Location Access
-            </button>
+            </Link>
             <p className="text-[#FF5069] text-sm font-semibold">Enter Location Manually</p>
           </div>
         </div>
