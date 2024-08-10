@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
 import ImageUpload from "../common/ImageUpload";
 
 const Register: React.FC = () => {
+  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
-
   const steps = [
     "My Number Is",
     "Verification Code",
@@ -20,14 +20,17 @@ const Register: React.FC = () => {
   const nextStep = () => {
     if (currentStep < steps.length) {
       setCurrentStep(currentStep + 1);
-    } else {
-      window.location.href = '/location';
+      if (currentStep === steps.length - 1) {
+        navigate('/location');
+      }
     }
   };
 
   const prevStep = () => {
     if (currentStep > 1) {
       setCurrentStep(currentStep - 1);
+    } else {
+      navigate('/');
     }
   };
   const renderStepContent = () => {
@@ -55,16 +58,15 @@ const Register: React.FC = () => {
     }
   };
   return (
-    <div className="max-w-md mx-auto mt-10 p-4">
+    <div className="max-w-md mt-10 p-4">
       <div className="mt-4">{renderStepContent()}</div>
       <div className="flex mt-4 items-center justify-center">
-        {/* <button
+        <button
           onClick={prevStep}
-          disabled={currentStep === 1}
-          className="bg-gray-300 text-gray-600 py-2 px-4 rounded disabled:opacity-50"
+          className="absolute top-10 left-0 py-2 px-4 rounded"
         >
-          Previous
-        </button> */}
+          <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 256 256"><path fill="#1E1E1E" d="M228 128a12 12 0 0 1-12 12H69l51.52 51.51a12 12 0 0 1-17 17l-72-72a12 12 0 0 1 0-17l72-72a12 12 0 0 1 17 17L69 116h147a12 12 0 0 1 12 12"></path></svg>
+        </button>
         <button
           onClick={nextStep}
           disabled={currentStep === steps.length}
@@ -131,12 +133,12 @@ const Verification: React.FC = () => {
                 First code
               </label>
               <input
-                type="number"
+                type="text"
                 maxLength={1}
                 data-focus-input-init
                 data-focus-input-next="code-2"
                 id="code-1"
-                className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block w-9 h-9 py-3 text-sm font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 required
               />
             </div>
@@ -145,13 +147,13 @@ const Verification: React.FC = () => {
                 Second code
               </label>
               <input
-                type="number"
+                type="text"
                 maxLength={1}
                 data-focus-input-init
                 data-focus-input-prev="code-1"
                 data-focus-input-next="code-3"
                 id="code-2"
-                className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block w-9 h-9 py-3 text-sm font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 required
               />
             </div>
@@ -160,13 +162,13 @@ const Verification: React.FC = () => {
                 Third code
               </label>
               <input
-                type="number"
+                type="text"
                 maxLength={1}
                 data-focus-input-init
                 data-focus-input-prev="code-2"
                 data-focus-input-next="code-4"
                 id="code-3"
-                className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block w-9 h-9 py-3 text-sm font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 required
               />
             </div>
@@ -175,13 +177,13 @@ const Verification: React.FC = () => {
                 Fourth code
               </label>
               <input
-                type="number"
+                type="text"
                 maxLength={1}
                 data-focus-input-init
                 data-focus-input-prev="code-3"
                 data-focus-input-next="code-5"
                 id="code-4"
-                className="block w-9 h-9 py-3 text-sm font-extrabold text-center text-gray-900 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                className="block w-9 h-9 py-3 text-sm font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                 required
               />
             </div>
@@ -231,6 +233,7 @@ const YourName: React.FC = () => {
               </label>
               <input
                 type="text"
+                placeholder="Enter Your Name"
                 className="w-[325px] h-[56px] block py-3 text-lg font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full"
                 required
               />
@@ -262,6 +265,7 @@ const EmailAddress: React.FC = () => {
               </label>
               <input
                 type="text"
+                placeholder="Enter Your Email"
                 className="w-[325px] h-[56px] block py-3 text-lg font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full"
                 required
               />
@@ -293,6 +297,7 @@ const HowOld: React.FC = () => {
               </label>
               <input
                 type="text"
+                placeholder="Enter Your Age"
                 className="w-[325px] h-[56px] block py-3 text-lg font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full"
                 required
               />
