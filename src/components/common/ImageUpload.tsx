@@ -19,10 +19,10 @@ const ImageUpload: React.FC<sizeProps> = ({size}) => {
     }
   };
 
-  const handleRemoveImage = () => {
-    setSelectedImage(null);
-    setPreviewUrl(null);
-  };
+  // const handleRemoveImage = () => {
+  //   setSelectedImage(null);
+  //   setPreviewUrl(null);
+  // };
 
   return (
     <div className="flex flex-col items-center justify-center">
