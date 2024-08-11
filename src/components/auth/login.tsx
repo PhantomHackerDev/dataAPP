@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
 import People from "../common/people";
@@ -7,8 +7,8 @@ const Login: React.FC = () => {
   return (
     <>
       <div className="flex w-full">
-        <div className="flex flex-col md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:p-5 justify-between mt-14 md:ml-36 items-center gap-5">
-          <img className="w-[115px] h-[43px]" src="/image/logo/logo.png" />
+        <div className="flex flex-col animate-fade-right animate-duration-[3000ms] md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:p-5 justify-between mt-14 md:ml-36 items-center gap-5">
+          <img className="w-[115px] h-[43px]" alt="lo" src="/image/logo/logo.png" />
           <div className="flex flex-col">
             <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
               {"Let’s start with your number"}
@@ -108,7 +108,7 @@ const Login: React.FC = () => {
             </p>
           </div>
         </div>
-        <div className="md:flex hidden mt-24 ml-48">
+        <div className="md:flex hidden mt-24 ml-48 animate-fade-down animate-duration-[3000ms]">
           <People />
         </div>
       </div>

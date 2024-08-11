@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Map from "../common/Map";
 const Locatied: React.FC = () => {
   return (
       <div className="flex">
-        <div className="flex flex-col justify-between mt-14 items-center gap-5">
+        <div className="flex flex-col md:bg-[#e0d6e9] md:rounded-3xl h-[600px] md:drop-shadow-2xl md:p-5 justify-between mt-14 md:ml-36 items-center gap-5">
           <img src="/image/main/location.png" alt="location" />
           <div className="flex flex-col gap-3">
             <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">

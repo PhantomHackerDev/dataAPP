@@ -2,9 +2,9 @@ import React from "react";
 
 const people = [
   { id: 1, src: "/image/person/1.jpg", alt: "Person 1" },
-  { id: 2, src: "/image/person/2.jpg", alt: "Person 2" },
-  { id: 3, src: "/image/person/3.jpg", alt: "Person 3" },
-  { id: 4, src: "/image/person/4.jpg", alt: "Person 4" },
+  { id: 2, src: "/image/person/image.png", alt: "Person 2" },
+  { id: 3, src: "/image/person/image (2).png", alt: "Person 3" },
+  { id: 4, src: "/image/person/image (1).png", alt: "Person 4" },
   { id: 5, src: "/image/person/5.jpg", alt: "Person 5" },
   { id: 6, src: "/image/person/6.jpg", alt: "Person 6" },
 ];
