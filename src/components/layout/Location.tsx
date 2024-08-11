@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Map from "../common/Map";
 const Locatied: React.FC = () => {
   return (
       <div className="flex">
