@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
+import People from "../common/people";
 
 const Login: React.FC = () => {
   return (
     <>
-      <div className="flex">
-        <div className="flex flex-col justify-between mt-14 items-center gap-5">
+      <div className="flex w-full">
+        <div className="flex flex-col md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:p-5 justify-between mt-14 md:ml-36 items-center gap-5">
           <img className="w-[115px] h-[43px]" src="/image/logo/logo.png" />
           <div className="flex flex-col">
             <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -99,13 +100,16 @@ const Login: React.FC = () => {
             </div>
           </div>
           <div className="flex flex-col justify-center items-center gap-3">
-            <p className="">
+            <p className="text-black">
               {"Don’t have an account?"}{" "}
               <Link className="text-[#FF5069]" to="/register">
                 Sign Up
               </Link>
             </p>
           </div>
+        </div>
+        <div className="md:flex hidden mt-24 ml-48">
+          <People />
         </div>
       </div>
     </>
