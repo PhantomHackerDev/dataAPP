@@ -1,13 +1,12 @@
 import React from "react";
 import ImageCarousel from "../common/ImageCarousel";
+import Header from "./header";
 
 const Dashboard: React.FC = () => {
   return (
-    <>
-      <div className="md:flex w-full sm: hidden">
-        <div className="flex w-full">
-          
-        </div>
+    <div className="flex flex-col w-full">
+      <div className="md:flex flex-col hidden w-full">
+        <Header />
       </div>
       <div className="sm:flex md:hidden flex-col mt-14 h-full justify-center">
         <div className="flex justify-between px-5 gap-20">
@@ -51,7 +50,7 @@ const Dashboard: React.FC = () => {
           </button>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 
