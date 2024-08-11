@@ -60,11 +60,11 @@ const Register: React.FC = () => {
   };
   return (
     <div className="flex w-full h-[600px]">
-      <div className="md:flex hidden mt-24 ml-48">
+      <div className="md:flex animate-fade-right animate-duration-[3000ms] hidden mt-24 ml-48">
         <People />
       </div>
-      <div className="max-w-md mt-10 p-4 w-full md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:ml-36 overflow-hidden">
-        <div className="mt-4 overflow-hidden">{renderStepContent()}</div>
+      <div className="max-w-md mt-10 p-4  animate-fade-left animate-duration-1000 w-full md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:ml-36 overflow-hidden">
+        <div className="mt-4 overflow-hidden  animate-fade-left animate-duration-1000">{renderStepContent()}</div>
         <div className="flex mt-4 items-center justify-center">
           <button
             onClick={prevStep}
@@ -81,7 +81,7 @@ const Register: React.FC = () => {
           </button>
         </div>
         <div className="flex flex-col">
-          <img className="w-[90%] h-auto" src="/image/main/vectorLine.png" />
+          <img className="w-[90%] h-auto" alt="vectorline" src="/image/main/vectorLine.png" />
         </div>
       </div>
     </div>
@@ -90,7 +90,7 @@ const Register: React.FC = () => {
 
 const MyNumber: React.FC = () => {
   return (
-    <div className="flex">
+    <div className="flex  animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center">
         <div className="flex flex-col">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -110,7 +110,7 @@ const MyNumber: React.FC = () => {
 
 const Verification: React.FC = () => {
   return (
-    <div className="">
+    <div className=" animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 gap-5 items-center">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -201,7 +201,7 @@ const Verification: React.FC = () => {
 
 const YourName: React.FC = () => {
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center  animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -233,7 +233,7 @@ const YourName: React.FC = () => {
 
 const EmailAddress: React.FC = () => {
   return (
-    <div className="flex  justify-center">
+    <div className="flex  justify-center  animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -266,7 +266,7 @@ const EmailAddress: React.FC = () => {
 const HowOld: React.FC = () => {
   const [value, setValue] = useState(32);
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -286,7 +286,7 @@ const HowOld: React.FC = () => {
 
 const Gender: React.FC = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center  animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -373,10 +373,8 @@ const Gender: React.FC = () => {
 };
 
 const LookingFor: React.FC = () => {
-  const [selectedValue, setSelectedValue] = useState<string>("male");
-
   return (
-    <div className="flex">
+    <div className="flex animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -442,7 +440,7 @@ const MultiSelect: React.FC = () => {
     }
   };
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -490,7 +488,7 @@ const UploadImag: React.FC = () => {
     
   }
   return (
-    <div className="flex">
+    <div className="flex animate-fade-left animate-duration-1000">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
