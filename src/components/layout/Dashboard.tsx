@@ -2,19 +2,14 @@ import React from "react";
 import ImageCarousel from "../common/ImageCarousel";
 
 const Dashboard: React.FC = () => {
-  const images = [
-    'https://via.placeholder.com/800x400.png?text=Image+1',
-    'https://via.placeholder.com/800x400.png?text=Image+2',
-    'https://via.placeholder.com/800x400.png?text=Image+3',
-  ];
   return (
-    <div className="flex flex-col w-full mt-14 h-full justify-center">
+    <div className="flex flex-col mt-14 h-full justify-center">
       <div className="flex justify-between px-5 gap-20">
         <div className="flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 1024 1024"><path fill="#FF5069" d="M160 448a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V160.064a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32V416a32 32 0 0 1-32 32zM160 896a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h256a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32zm448 0a32 32 0 0 1-32-32V608a32 32 0 0 1 32-32h255.936a32 32 0 0 1 32 32v256a32 32 0 0 1-32 32z"></path></svg>
         </div>
         <div className="flex items-center h-[43px]">
-          <img className="w-[115px] h-[43px]" src="/image/logo/logo.png" />
+          <img className="w-[115px] h-[43px]" alt="dashboard_logo" src="/image/logo/logo.png" />
         </div>
         <div className="flex items-center">
           <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><path fill="#FF5069" d="M14 12v7.88c.04.3-.06.62-.29.83a.996.996 0 0 1-1.41 0l-2.01-2.01a.99.99 0 0 1-.29-.83V12h-.03L4.21 4.62a1 1 0 0 1 .17-1.4c.19-.14.4-.22.62-.22h14c.22 0 .43.08.62.22a1 1 0 0 1 .17 1.4L14.03 12z"></path></svg>

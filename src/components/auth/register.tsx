@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import PhoneInput from "../common/phoneInput";
 import ImageUpload from "../common/ImageUpload";
-
+import NumberPicker from "../common/NumberPicker";
+import People from "../common/people";
 const Register: React.FC = () => {
   const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
@@ -58,25 +59,30 @@ const Register: React.FC = () => {
     }
   };
   return (
-    <div className="max-w-md mt-10 p-4">
-      <div className="mt-4">{renderStepContent()}</div>
-      <div className="flex mt-4 items-center justify-center">
-        <button
-          onClick={prevStep}
-          className="absolute top-10 left-0 py-2 px-4 rounded"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 256 256"><path fill="#1E1E1E" d="M228 128a12 12 0 0 1-12 12H69l51.52 51.51a12 12 0 0 1-17 17l-72-72a12 12 0 0 1 0-17l72-72a12 12 0 0 1 17 17L69 116h147a12 12 0 0 1 12 12"></path></svg>
-        </button>
-        <button
-          onClick={nextStep}
-          disabled={currentStep === steps.length}
-          className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center justify-center items-center"
-        >
-          {currentStep === 2 ? "Verify" : "Continue"}
-        </button>
+    <div className="flex w-full h-[600px]">
+      <div className="md:flex hidden mt-24 ml-48">
+        <People />
       </div>
-      <div className="flex flex-col">
-        <img className="w-[90%] h-auto" src="/image/main/vectorLine.png" />
+      <div className="max-w-md mt-10 p-4 w-full md:bg-[#e0d6e9] md:rounded-3xl md:drop-shadow-2xl md:ml-36 overflow-hidden">
+        <div className="mt-4 overflow-hidden">{renderStepContent()}</div>
+        <div className="flex mt-4 items-center justify-center">
+          <button
+            onClick={prevStep}
+            className="absolute top-10 left-0 py-2 px-4 rounded"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 256 256"><path fill="#1E1E1E" d="M228 128a12 12 0 0 1-12 12H69l51.52 51.51a12 12 0 0 1-17 17l-72-72a12 12 0 0 1 0-17l72-72a12 12 0 0 1 17 17L69 116h147a12 12 0 0 1 12 12"></path></svg>
+          </button>
+          <button
+            onClick={nextStep}
+            disabled={currentStep === steps.length}
+            className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center justify-center items-center"
+          >
+            {currentStep === 2 ? "Verify" : "Continue"}
+          </button>
+        </div>
+        <div className="flex flex-col">
+          <img className="w-[90%] h-auto" src="/image/main/vectorLine.png" />
+        </div>
       </div>
     </div>
   );
@@ -96,16 +102,7 @@ const MyNumber: React.FC = () => {
         </div>
         <div className="flex flex-col gap-5">
           <PhoneInput />
-          {/* <button
-            type="button"
-            className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center items-center"
-          >
-            Continue
-          </button> */}
         </div>
-        {/* <div className="flex flex-col">
-          <img className="w-[90%] h-auto" src="/image/main/vectorLine.png" />
-        </div> */}
       </div>
     </div>
   );
@@ -197,17 +194,6 @@ const Verification: React.FC = () => {
             Resend Code
           </Link>
         </div>
-        {/* <div className="flex flex-col gap-5">
-          <button
-            type="button"
-            className="flex text-white w-[325px] h-[56px] bg-[#FF5069] rounded-full font-medium px-16 py-2 text-center items-center"
-          >
-            Verify
-          </button>
-        </div> */}
-        {/* <div className="flex flex-col">
-          <img className="w-[90%] h-auto" src="/image/main/vectorLine.png" />
-        </div> */}
       </div>
     </div>
   );
@@ -278,8 +264,9 @@ const EmailAddress: React.FC = () => {
 };
 
 const HowOld: React.FC = () => {
+  const [value, setValue] = useState(32);
   return (
-    <div className="flex  justify-center">
+    <div className="flex justify-center">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">
@@ -289,21 +276,9 @@ const HowOld: React.FC = () => {
             Please provide your age in years
           </p>
         </div>
-        <form className="max-w-sm mx-auto">
-          <div className="flex mb-2 space-x-2 w-[325px] h-[56px] rtl:space-x-reverse">
-            <div>
-              <label htmlFor="code-1" className="sr-only">
-                First code
-              </label>
-              <input
-                type="text"
-                placeholder="Enter Your Age"
-                className="w-[325px] h-[56px] block py-3 text-lg font-semibold text-center text-gray-600 bg-white border border-gray-300 rounded-full"
-                required
-              />
-            </div>
-          </div>
-        </form>
+        <div className="flex justify-center items-center">
+          <NumberPicker min={12} max={67} value={value} onChange={setValue} />
+        </div>
       </div>
     </div>
   );
@@ -467,7 +442,7 @@ const MultiSelect: React.FC = () => {
     }
   };
   return (
-    <div className="flex">
+    <div className="flex justify-center">
       <div className="flex flex-col justify-between mt-14 items-center gap-5">
         <div className="flex flex-col gap-3">
           <p className="text-black font-semibold mx-5 px-5 text-center text-2xl">

@@ -20,7 +20,7 @@ const App: React.FC = () => {
 
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <div className="min-h-screen bg-[#f3e2e5]  overflow-y-hidden">
         {
           loading ? (
