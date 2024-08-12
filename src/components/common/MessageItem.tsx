@@ -12,11 +12,8 @@ interface MessageItemProps {
 
 const MessageItem: React.FC<MessageItemProps> = ({ avatar, name, username, date, message, reaction }) => {
   return (
-    <div className="flex items-start space-x-4 p-4 border-b border-gray-200">
-      {/* Avatar */}
+    <div onClick={() => {}} className="flex items-start space-x-4 p-4 border-b border-gray-200">
       <img src={avatar} alt={`${name}'s avatar`} className="w-10 h-10 rounded-full" />
-
-      {/* Message content */}
       <div className="flex-grow">
         <div className="flex items-center justify-between">
           <div>
