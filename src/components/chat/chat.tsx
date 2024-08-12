@@ -1,52 +1,19 @@
-// import React from "react";
-// import Sidebar from "./sidebar";
-// import Chatting from "./chatting";
-
-// const Chat:React.FC = () => {
-//   return (
-//     <div className="flex m-5 rounded-xl p-10">
-//       <Sidebar />
-//       <Chatting />
-//     </div>
-//   )
-// }
-
-// export default Chat;
 import React from 'react';
 import MessageList from './sidebar';
+import MessageInput from '../common/MessageInput';
+import Chatting from './chatting';
 
 const Chat: React.FC = () => {
   return (
     <div className="flex h-[625px] m-5 bg-gray-100 rounded-xl">
-      {/* <div className="w-1/4 p-4 bg-white border-r">
-        <div className="text-lg font-bold">Glare</div>
-        <div className="mt-6">
-          <input
-            type="text"
-            placeholder="Search people or message"
-            className="w-full p-2 border rounded-md"
-          />
-        </div>
-        <div className="mt-4">
-          <ul>
-            <li className="flex items-center p-2 hover:bg-gray-100 cursor-pointer">
-              <img
-                src="https://via.placeholder.com/32"
-                alt="Profile"
-                className="rounded-full"
-              />
-              <div className="ml-3">
-                <p className="font-semibold">Suzana Colin</p>
-                <p className="text-sm text-gray-500">Chris Martin vocalist 🎤💖</p>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div> */}
       <MessageList />
-      <div className="flex-1 p-4 bg-white">
-        <div className="flex items-center">
-          <div className="font-semibold">Suzana Colin</div>
+      {/* <div className="flex-1 p-4 bg-white">
+        <div className="flex items-center p-1 bg-white shadow-md">
+          <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Profile" className="w-10 h-10 rounded-full" />
+          <div className="ml-3">
+            <p className="font-semibold">Suzana Colin</p>
+            <p className="text-sm text-gray-500">@suzana</p>
+          </div>
         </div>
         <div className="mt-4">
           <div className="flex flex-col">
@@ -70,14 +37,9 @@ const Chat: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-10 w-3/5 p-4 bg-white border-t">
-          <input
-            type="text"
-            placeholder="Start a new message"
-            className="w-full p-2 border rounded-md"
-          />
-        </div>
-      </div>
+        <MessageInput />
+      </div> */}
+      <Chatting />
     </div>
   );
 };

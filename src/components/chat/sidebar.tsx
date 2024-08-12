@@ -61,7 +61,7 @@ const MessageList: React.FC = () => {
 
   return (
     <div className="bg-white shadow-md w-96 p-4 gap-5">
-      <p className='text-black font-semibold text-3xl'>Message</p>
+      <p className='flex text-black font-semibold text-3xl mb-5'>Message</p>
       <input
         type="text"
         placeholder="Filter messages..."
@@ -69,9 +69,7 @@ const MessageList: React.FC = () => {
         onChange={(e) => setFilter(e.target.value)}
         className="w-full mb-4 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
-
-      {/* Scrollable Message List */}
-      <div className="max-h-96 overflow-y-auto">
+      <div className="max-h-[450px] overflow-y-auto">
         {filteredMessages.length > 0 ? (
           filteredMessages.map((msg, index) => (
             <MessageItem key={index} {...msg} />
